@@ -471,6 +471,31 @@ aidl_interface {
 }
 
 aidl_interface {
+    name: "vendor.oplus.hardware.oplusSensor",
+    system_ext_specific: true,
+    vendor_available: true,
+    local_include_dir: "aidl",
+    srcs: ["aidl/vendor/oplus/hardware/oplusSensor/*.aidl"],
+    stability: "vintf",
+    owner: "oplus",
+
+    backend: {
+        cpp: {
+            enabled: true,
+        },
+        java: {
+            sdk_version: "module_current",
+        },
+    },
+    versions_with_info: [
+        {
+            version: "1",
+            imports: [],
+        },
+    ],
+}
+
+aidl_interface {
     name: "vendor.oplus.hardware.osense.client",
     system_ext_specific: true,
     vendor_available: true,
@@ -703,7 +728,7 @@ aidl_interface {
             enabled: true,
         },
         java: {
-            enabled: false,
+            enabled: true,
         },
     },
     versions_with_info: [
@@ -744,7 +769,7 @@ aidl_interface {
             enabled: true,
         },
         java: {
-            enabled: false,
+            enabled: true,
         },
     },
     imports: [
